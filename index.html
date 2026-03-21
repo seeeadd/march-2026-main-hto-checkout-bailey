@@ -340,24 +340,24 @@ body > * {
         height: auto !important;
         min-height: 0 !important;
         padding: 10px 16px 10px !important;
-        flex-direction: column !important;
+        flex-direction: row !important;
         align-items: center !important;
-        justify-content: center;
-        gap: 6px !important;
+        justify-content: space-between;
+        gap: 8px !important;
         transform: none;
         border-radius: 0;
-        background: linear-gradient(135deg,#fff0ed,#ffe8e2);
+        background: linear-gradient(135deg,#FAF8F5,#F5F0EB);
         backdrop-filter: none;
         box-sizing: border-box;
         overflow: visible;
         border: none;
-        border-bottom: 2px solid rgba(220,50,50,.15);
+        border-bottom: 1px solid rgba(0,0,0,.06);
         box-shadow: 0 2px 8px rgba(0,0,0,.05);
       }.sec-hero .top-bar.visible { transform: none; }
-      .sec-hero .top-bar__logo { display: none; }
-      .sec-hero .top-bar__deal { display: flex !important;justify-content:center;order:0;width:100%;position:static !important;transform:none !important;left:auto !important; }
+      .sec-hero .top-bar__logo { flex-shrink:0; }
+      .sec-hero .top-bar__logo img { height:28px !important; }
+      .sec-hero .top-bar__deal { display: flex !important;justify-content:center;order:0;position:static !important;transform:none !important;left:auto !important; }
       .sec-hero .top-bar__deal-badge { display: none !important; }
-      .sec-hero .top-bar__notice { font-size: 14px !important;max-width:100% !important;text-align:center;line-height:1.3;width:100%; }
       .sec-hero .top-bar__cta {
         width: auto;
         height: 32px;
@@ -9210,10 +9210,6 @@ body > * {
       <img src="https://i.imgur.com/IpRdQqw.png" alt="AI Design & Grow Experience" />
     </div>
     <div class="top-bar__deal" style="gap:12px">
-      <div class="top-bar__notice" style="font-size:14px;color:#4a1515;line-height:1.3;text-align:center;max-width:280px">
-        <span style="font-weight:800;color:#cc2020">AI Income OS is officially closed.</span>
-        <span style="font-weight:600;color:#5a4a3a"> In the meantime, check out AI Design & Grow.</span>
-      </div>
       <div class="top-bar__deal-badge" style="display:flex;align-items:center;border-radius:100px;overflow:hidden;border:1px solid rgba(212,168,83,.25)">
         <span class="top-bar__deal-price" style="background:linear-gradient(135deg,#c4734e,#b5674a);color:#fff;padding:6px 14px;font-weight:800;font-size:14px">$327/yr</span>
         <span class="top-bar__deal-sep" style="padding:6px 6px;font-size:11px;color:#999;background:#FFF5EB">or</span>
