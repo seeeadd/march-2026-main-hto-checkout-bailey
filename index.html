@@ -4806,6 +4806,320 @@ function heroBuyScroll(e){
 }
 </script>
 
+<!-- ═══ FEATURED HIGHLIGHT: PERSONAL SHOP AUDIT (first 25 buyers only) ═══ -->
+<style>
+.bonus-featured{position:relative;padding:44px 72px 56px;background:linear-gradient(180deg,var(--cream) 0%,#F8EDE0 100%);overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.bonus-featured::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 80% 0%,rgba(199,42,31,.05) 0%,transparent 60%),radial-gradient(ellipse 60% 60% at 10% 100%,rgba(212,168,83,.06) 0%,transparent 70%);pointer-events:none}
+.bf-tape{display:none}
+.bf-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:60px;align-items:center;position:relative;z-index:1}
+.bf-copy{min-width:0}
+.bf-label{display:inline-flex;align-items:center;gap:10px;background:#C72A1F;color:#FFFEFB;font-size:13px;font-weight:900;padding:10px 22px 10px 18px;border-radius:999px;margin-bottom:22px;text-transform:uppercase;letter-spacing:2px;font-family:Arial,Helvetica,sans-serif;box-shadow:0 8px 28px rgba(199,42,31,.32),0 2px 8px rgba(0,0,0,.1);position:relative}
+.bf-label-dot{width:9px;height:9px;border-radius:50%;background:#FFFEFB;box-shadow:0 0 0 0 rgba(255,254,251,.85);animation:bf-ping 1.4s ease-in-out infinite}
+@keyframes bf-ping{0%{box-shadow:0 0 0 0 rgba(255,254,251,.85)}70%{box-shadow:0 0 0 10px rgba(255,254,251,0)}100%{box-shadow:0 0 0 0 rgba(255,254,251,0)}}
+.bf-title{font-family:var(--display);font-size:clamp(32px,4vw,46px);color:var(--dark);line-height:1.12;margin:0 0 18px;font-weight:700;letter-spacing:-.4px}
+.bf-title em{color:var(--coral);font-style:italic}
+.bf-body{font-family:var(--font);font-size:18px;color:#3a3632;line-height:1.7;margin:0 0 22px}
+.bf-body strong{color:var(--dark)}
+.bf-takeaway{position:relative;display:inline-block;font-family:var(--accent);font-size:24px;color:var(--coral);line-height:1.3;padding-bottom:10px;margin-bottom:24px}
+.bf-takeaway::after{content:'';position:absolute;left:0;right:0;bottom:0;height:7px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 7' preserveAspectRatio='none'%3E%3Cpath d='M2 5Q50 0 100 4T198 3' stroke='%23E07A5F' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/100% 100%}
+.bf-meta{display:flex;align-items:center;gap:14px;padding-top:8px;border-top:1px dashed var(--border)}
+.bf-counter{display:inline-flex;align-items:center;gap:8px;font-family:var(--font);font-size:14px;color:#5a534a;font-weight:600}
+.bf-counter strong{color:#C72A1F;font-weight:900}
+.bf-counter-bar{width:120px;height:6px;background:#F0E5D5;border-radius:3px;overflow:hidden;position:relative}
+.bf-counter-bar::after{content:'';position:absolute;left:0;top:0;bottom:0;width:84%;background:linear-gradient(90deg,#C72A1F,#E07A5F);border-radius:3px}
+.bf-art-wrap{position:relative;aspect-ratio:1.18/1;background:linear-gradient(135deg,#FBF5E8 0%,#F0E2C8 100%);border-radius:18px;padding:30px;box-shadow:0 22px 60px rgba(26,24,22,.14),0 4px 16px rgba(26,24,22,.06);overflow:hidden}
+.bf-art-wrap::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M0 0h60v60H0z' fill='%23FBF5E8' opacity='.4'/%3E%3Ccircle cx='10' cy='10' r='.4' fill='%23B5A77F' opacity='.18'/%3E%3Ccircle cx='30' cy='25' r='.4' fill='%23B5A77F' opacity='.18'/%3E%3Ccircle cx='50' cy='40' r='.4' fill='%23B5A77F' opacity='.18'/%3E%3Ccircle cx='20' cy='50' r='.4' fill='%23B5A77F' opacity='.18'/%3E%3C/svg%3E");opacity:.6;pointer-events:none}
+.bf-art{position:relative;width:100%;height:100%}
+@media(max-width:900px){
+.bonus-featured{padding:48px 24px 56px}
+.bf-inner{grid-template-columns:1fr;gap:36px}
+.bf-art-wrap{padding:18px}
+}
+</style>
+<section class="bonus-featured" id="bonus-featured">
+  <div class="bf-tape">EXCLUSIVE FAST-MOVER GIFT</div>
+  <div class="bf-inner">
+    <div class="bf-copy">
+      <span class="bf-label"><span class="bf-label-dot"></span>FIRST 25 BUYERS ONLY</span>
+      <h2 class="bf-title">A <em>personal shop audit</em>, recorded just for you</h2>
+      <p class="bf-body">Bailey personally records a <strong>walkthrough of your Etsy shop</strong> and tells you exactly what she'd change. Your thumbnails, your listings, your positioning. Capped at 25 buyers, no exceptions.</p>
+      <div class="bf-takeaway">So you know exactly what to fix, before you fix it.</div>
+      <div class="bf-meta">
+        <span class="bf-counter"><strong>17</strong> of 25 still available</span>
+        <span class="bf-counter-bar"></span>
+      </div>
+    </div>
+    <div class="bf-art-wrap">
+      <svg class="bf-art" viewBox="0 0 460 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="bf-window" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFEFB"/><stop offset="1" stop-color="#F8F2E6"/></linearGradient>
+          <!-- Linen towel weave -->
+          <linearGradient id="bf-linen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EDD6B4"/><stop offset="1" stop-color="#D8B98A"/></linearGradient>
+          <pattern id="bf-weave" x="0" y="0" width="3" height="3" patternUnits="userSpaceOnUse"><rect width="3" height="3" fill="#EDD6B4"/><line x1="0" y1="0" x2="3" y2="3" stroke="#C9A874" stroke-width=".25" opacity=".5"/></pattern>
+          <!-- Sage candle wax -->
+          <linearGradient id="bf-wax" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D5DCC8"/><stop offset="1" stop-color="#A2B597"/></linearGradient>
+          <linearGradient id="bf-wax-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EBEFE0"/><stop offset="1" stop-color="#C8D3BB"/></linearGradient>
+          <radialGradient id="bf-flame" cx=".5" cy=".7" r=".5"><stop offset="0" stop-color="#FFF1A8"/><stop offset=".6" stop-color="#FFA64C"/><stop offset="1" stop-color="#E07A5F" stop-opacity="0"/></radialGradient>
+          <!-- Ceramic mug -->
+          <linearGradient id="bf-mug-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F2D9DC"/><stop offset="1" stop-color="#D6A8AE"/></linearGradient>
+          <linearGradient id="bf-mug" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFEFB"/><stop offset=".5" stop-color="#F0E6E0"/><stop offset="1" stop-color="#C8B5B0"/></linearGradient>
+          <!-- Brass wax seal -->
+          <linearGradient id="bf-brass-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E5DCC0"/><stop offset="1" stop-color="#B5A476"/></linearGradient>
+          <linearGradient id="bf-brass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E8C672"/><stop offset=".5" stop-color="#C49A3F"/><stop offset="1" stop-color="#7E5E20"/></linearGradient>
+
+          <linearGradient id="bf-baileyring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E07A5F"/><stop offset="1" stop-color="#C45D45"/></linearGradient>
+          <clipPath id="bf-bailey-clip"><circle cx="34" cy="34" r="32"/></clipPath>
+          <filter id="bf-shadow" x="-10%" y="-10%" width="120%" height="120%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity=".12"/></filter>
+          <filter id="bf-card-shadow" x="-10%" y="-10%" width="120%" height="120%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity=".09"/></filter>
+        </defs>
+
+        <!-- BROWSER WINDOW (realistic Mac-style w/ tabs) -->
+        <g filter="url(#bf-shadow)">
+          <rect x="20" y="34" width="420" height="338" rx="11" fill="#FFFEFB" stroke="#1A1816" stroke-width=".8"/>
+          <!-- top chrome bar -->
+          <rect x="20" y="34" width="420" height="34" rx="11" fill="#F0E8D5"/>
+          <rect x="20" y="50" width="420" height="18" fill="#F0E8D5"/>
+          <!-- tab strip -->
+          <rect x="78" y="40" width="118" height="22" rx="6" fill="#FBF5E8" stroke="#E0D8C5" stroke-width=".5"/>
+          <circle cx="86" cy="51" r="2.6" fill="#1D6B6B" opacity=".7"/>
+          <text x="93" y="54" font-family="Arial, Helvetica, sans-serif" font-size="8" fill="#3a3632" font-weight="600">your shop · Etsy</text>
+          <line x1="186" y1="46" x2="186" y2="56" stroke="#9D8B75" stroke-width=".6" opacity=".55"/>
+          <text x="190" y="54" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#9D8B75" font-weight="700">×</text>
+          <!-- second tab (inactive) -->
+          <rect x="200" y="40" width="74" height="22" rx="6" fill="#E8DFC8" opacity=".7"/>
+          <circle cx="208" cy="51" r="2.2" fill="#9D8B75" opacity=".55"/>
+          <text x="216" y="54" font-family="Arial, Helvetica, sans-serif" font-size="7.5" fill="#9D8B75" font-weight="500">stats</text>
+          <!-- new tab plus -->
+          <text x="282" y="55" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#9D8B75" font-weight="400">+</text>
+          <line x1="20" y1="68" x2="440" y2="68" stroke="#E0D8C5" stroke-width=".6"/>
+          <!-- traffic lights -->
+          <circle cx="36" cy="50" r="4.6" fill="#FF5F57" stroke="#E04A45" stroke-width=".5"/>
+          <circle cx="50" cy="50" r="4.6" fill="#FEBC2E" stroke="#E0A621" stroke-width=".5"/>
+          <circle cx="64" cy="50" r="4.6" fill="#28C840" stroke="#1FA632" stroke-width=".5"/>
+        </g>
+
+        <!-- ETSY-style nav bar (search + icons) -->
+        <g transform="translate(36, 78)">
+          <!-- Etsy wordmark -->
+          <text x="0" y="13" font-family="Georgia, 'Ogg', serif" font-size="14" fill="#F1641E" font-weight="700" font-style="italic" letter-spacing="-.4">Etsy</text>
+          <!-- Search bar -->
+          <rect x="46" y="0" width="240" height="18" rx="9" fill="#FFFEFB" stroke="#1A1816" stroke-width=".7"/>
+          <text x="56" y="13" font-family="Arial, Helvetica, sans-serif" font-size="8" fill="#9D8B75">Search for anything</text>
+          <circle cx="270" cy="9" r="6" fill="#F1641E"/>
+          <circle cx="269" cy="8" r="2.2" fill="none" stroke="#FFFEFB" stroke-width="1.1"/>
+          <line x1="270.6" y1="9.6" x2="272" y2="11" stroke="#FFFEFB" stroke-width="1.1" stroke-linecap="round"/>
+          <!-- Icons -->
+          <g transform="translate(298, 4)" stroke="#1A1816" stroke-width="1" fill="none">
+            <path d="M0 6 C0 2 4 0 4 4 C4 0 8 2 8 6 L4 10 Z" stroke-linejoin="round"/>
+          </g>
+          <g transform="translate(316, 4)" stroke="#1A1816" stroke-width="1" fill="none">
+            <circle cx="4" cy="4" r="3"/>
+            <path d="M0 12 C0 8 8 8 8 12"/>
+          </g>
+          <g transform="translate(336, 3)" stroke="#1A1816" stroke-width="1" fill="none">
+            <path d="M0 5 L2 5 L4 11 L11 11 L13 5 L3.5 5"/>
+            <circle cx="6" cy="14" r="1.2" fill="#1A1816"/>
+            <circle cx="11" cy="14" r="1.2" fill="#1A1816"/>
+          </g>
+        </g>
+
+        <!-- divider -->
+        <line x1="36" y1="106" x2="424" y2="106" stroke="#E8E0CD" stroke-width=".6"/>
+
+        <!-- SHOP HEADER ROW -->
+        <g transform="translate(36, 116)">
+          <!-- shop avatar circle -->
+          <circle cx="20" cy="20" r="18" fill="#1D6B6B"/>
+          <text x="20" y="25.5" font-family="Georgia, serif" font-size="16" fill="#FFFEFB" text-anchor="middle" font-weight="700" font-style="italic">y</text>
+          <!-- shop name -->
+          <text x="48" y="14" font-family="Georgia, 'Ogg', serif" font-size="13" fill="#1A1816" font-weight="700">your shop</text>
+          <!-- star + meta row -->
+          <g transform="translate(48, 23)">
+            <path d="M0 -2 L1.4 1 L4.6 1.4 L2.2 3.6 L2.8 6.8 L0 5.2 L-2.8 6.8 L-2.2 3.6 L-4.6 1.4 L-1.4 1 Z" fill="#D4A853"/>
+            <text x="9" y="3" font-family="Arial, Helvetica, sans-serif" font-size="8" fill="#3a3632" font-weight="600">Star Seller</text>
+            <text x="62" y="3" font-family="Arial, Helvetica, sans-serif" font-size="7.5" fill="#9D8B75">·  238 sales  ·  4.9 ★ (164)</text>
+          </g>
+          <!-- follow btn -->
+          <rect x="298" y="6" width="62" height="22" rx="11" fill="#1A1816"/>
+          <text x="329" y="20" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#FFFEFB" text-anchor="middle" font-weight="700">+ Follow</text>
+        </g>
+
+        <!-- Filter / Sort row -->
+        <g transform="translate(36, 158)" font-family="Arial, Helvetica, sans-serif" font-size="8">
+          <rect x="0" y="0" width="56" height="16" rx="8" fill="#FBF5E8" stroke="#E0D8C5" stroke-width=".6"/>
+          <text x="28" y="11" fill="#3a3632" text-anchor="middle" font-weight="600">All Items</text>
+          <rect x="62" y="0" width="56" height="16" rx="8" fill="#FFFEFB" stroke="#E0D8C5" stroke-width=".6"/>
+          <text x="90" y="11" fill="#5a534a" text-anchor="middle">Bestsellers</text>
+          <rect x="124" y="0" width="48" height="16" rx="8" fill="#FFFEFB" stroke="#E0D8C5" stroke-width=".6"/>
+          <text x="148" y="11" fill="#5a534a" text-anchor="middle">On Sale</text>
+          <text x="388" y="11" fill="#5a534a" text-anchor="end" font-weight="600">Sort: Most recent ▾</text>
+        </g>
+
+        <!-- LISTINGS GRID — realistic Etsy cards w/ illustrated products -->
+
+        <!-- Card 1 — Linen Tea Towel (UNDERPERFORMING — coral audit ring) -->
+        <g transform="translate(36, 184)">
+          <rect x="0" y="0" width="92" height="138" rx="6" fill="#FFFEFB" stroke="#E0D8C5" stroke-width=".8" filter="url(#bf-card-shadow)"/>
+          <!-- product photo: folded linen towel -->
+          <rect x="6" y="6" width="80" height="78" rx="3" fill="url(#bf-linen)"/>
+          <rect x="6" y="6" width="80" height="78" rx="3" fill="url(#bf-weave)" opacity=".55"/>
+          <!-- folded towel illustration -->
+          <g transform="translate(46, 50)">
+            <rect x="-22" y="-12" width="44" height="20" rx="2" fill="#FBF5E8" stroke="#9C7843" stroke-width=".5"/>
+            <line x1="-22" y1="-7" x2="22" y2="-7" stroke="#9C7843" stroke-width=".4" opacity=".6"/>
+            <line x1="-22" y1="-2" x2="22" y2="-2" stroke="#9C7843" stroke-width=".4" opacity=".5"/>
+            <line x1="-22" y1="3" x2="22" y2="3" stroke="#9C7843" stroke-width=".4" opacity=".5"/>
+            <!-- monogram embroidery -->
+            <text x="0" y="2" font-family="Georgia, serif" font-size="9" fill="#9C7843" text-anchor="middle" font-style="italic" opacity=".75">y</text>
+            <!-- shadow under fold -->
+            <ellipse cx="0" cy="11" rx="22" ry="2" fill="#1A1816" opacity=".15"/>
+          </g>
+          <!-- favorite heart -->
+          <circle cx="78" cy="14" r="7.5" fill="rgba(255,254,251,.85)"/>
+          <path d="M75 13 C75 11 76.5 10 78 11.5 C79.5 10 81 11 81 13 C81 15 78 17 78 17 C78 17 75 15 75 13 Z" fill="none" stroke="#1A1816" stroke-width="1"/>
+          <!-- price + meta -->
+          <text x="6" y="98" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#1A1816" font-weight="700">Linen Tea Towel</text>
+          <text x="6" y="108" font-family="Arial, Helvetica, sans-serif" font-size="7.5" fill="#9D8B75">handmade · giftable</text>
+          <text x="6" y="124" font-family="Georgia, serif" font-size="13" fill="#1A1816" font-weight="700">$24</text>
+          <text x="6" y="133" font-family="Arial, Helvetica, sans-serif" font-size="7" fill="#9D8B75">★ 4.7 (12)</text>
+          <text x="86" y="124" font-family="Arial, Helvetica, sans-serif" font-size="7" fill="#9D8B75" text-anchor="end" opacity=".6">Free ship</text>
+        </g>
+
+        <!-- Card 2 — Sage Candle Set (WORKING — teal check) -->
+        <g transform="translate(140, 184)">
+          <rect x="0" y="0" width="92" height="138" rx="6" fill="#FFFEFB" stroke="#E0D8C5" stroke-width=".8" filter="url(#bf-card-shadow)"/>
+          <rect x="6" y="6" width="80" height="78" rx="3" fill="url(#bf-wax-bg)"/>
+          <!-- candles -->
+          <g transform="translate(46, 50)">
+            <!-- back candle -->
+            <rect x="-3" y="-12" width="14" height="22" rx="1" fill="url(#bf-wax)" stroke="#7B8C6F" stroke-width=".4"/>
+            <line x1="4" y1="-15" x2="4" y2="-12" stroke="#1A1816" stroke-width=".7"/>
+            <ellipse cx="4" cy="-17" rx="2.4" ry="3.6" fill="url(#bf-flame)"/>
+            <!-- front candle (taller) -->
+            <rect x="-15" y="-16" width="14" height="26" rx="1" fill="url(#bf-wax)" stroke="#7B8C6F" stroke-width=".4"/>
+            <line x1="-8" y1="-19" x2="-8" y2="-16" stroke="#1A1816" stroke-width=".7"/>
+            <ellipse cx="-8" cy="-21" rx="2.6" ry="4" fill="url(#bf-flame)"/>
+            <!-- soft glow halo -->
+            <ellipse cx="-2" cy="-22" rx="14" ry="6" fill="#FFE8B8" opacity=".35"/>
+            <!-- shadow base -->
+            <ellipse cx="-2" cy="11" rx="20" ry="2" fill="#1A1816" opacity=".18"/>
+          </g>
+          <!-- favorite heart -->
+          <circle cx="78" cy="14" r="7.5" fill="rgba(255,254,251,.85)"/>
+          <path d="M75 13 C75 11 76.5 10 78 11.5 C79.5 10 81 11 81 13 C81 15 78 17 78 17 C78 17 75 15 75 13 Z" fill="#E07A5F" stroke="#C45D45" stroke-width=".7"/>
+          <text x="6" y="98" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#1A1816" font-weight="700">Sage Candle Set</text>
+          <text x="6" y="108" font-family="Arial, Helvetica, sans-serif" font-size="7.5" fill="#9D8B75">soy · hand-poured</text>
+          <text x="6" y="124" font-family="Georgia, serif" font-size="13" fill="#1A1816" font-weight="700">$38</text>
+          <text x="6" y="133" font-family="Arial, Helvetica, sans-serif" font-size="7" fill="#9D8B75">★ 4.9 (87)</text>
+          <text x="86" y="124" font-family="Arial, Helvetica, sans-serif" font-size="7" fill="#1D6B6B" text-anchor="end" font-weight="700">Bestseller</text>
+        </g>
+
+        <!-- Card 3 — Ceramic Mug -->
+        <g transform="translate(244, 184)">
+          <rect x="0" y="0" width="92" height="138" rx="6" fill="#FFFEFB" stroke="#E0D8C5" stroke-width=".8" filter="url(#bf-card-shadow)"/>
+          <rect x="6" y="6" width="80" height="78" rx="3" fill="url(#bf-mug-bg)"/>
+          <!-- ceramic mug illustration -->
+          <g transform="translate(46, 50)">
+            <!-- steam -->
+            <path d="M-4 -22 Q-7 -28 -3 -32" fill="none" stroke="#FFFEFB" stroke-width="1.4" stroke-linecap="round" opacity=".75"/>
+            <path d="M2 -22 Q-1 -28 3 -32" fill="none" stroke="#FFFEFB" stroke-width="1.4" stroke-linecap="round" opacity=".55"/>
+            <path d="M8 -22 Q5 -26 9 -30" fill="none" stroke="#FFFEFB" stroke-width="1.2" stroke-linecap="round" opacity=".45"/>
+            <!-- mug body -->
+            <path d="M-13 -16 L-14 12 Q-14 15 -11 15 L9 15 Q12 15 12 12 L11 -16 Z" fill="url(#bf-mug)" stroke="#1A1816" stroke-width=".7"/>
+            <!-- coffee surface -->
+            <ellipse cx="-1" cy="-16" rx="12" ry="2.6" fill="#5A3A20"/>
+            <ellipse cx="-1" cy="-16" rx="9" ry="1.8" fill="#7B5230"/>
+            <!-- handle -->
+            <path d="M12 -8 Q22 -8 22 0 Q22 8 12 8" fill="none" stroke="#1A1816" stroke-width="1.4" stroke-linecap="round"/>
+            <!-- shadow under -->
+            <ellipse cx="-1" cy="17" rx="14" ry="1.6" fill="#1A1816" opacity=".18"/>
+          </g>
+          <circle cx="78" cy="14" r="7.5" fill="rgba(255,254,251,.85)"/>
+          <path d="M75 13 C75 11 76.5 10 78 11.5 C79.5 10 81 11 81 13 C81 15 78 17 78 17 C78 17 75 15 75 13 Z" fill="none" stroke="#1A1816" stroke-width="1"/>
+          <text x="6" y="98" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#1A1816" font-weight="700">Ceramic Mug</text>
+          <text x="6" y="108" font-family="Arial, Helvetica, sans-serif" font-size="7.5" fill="#9D8B75">stoneware · 12oz</text>
+          <text x="6" y="124" font-family="Georgia, serif" font-size="13" fill="#1A1816" font-weight="700">$28</text>
+          <text x="6" y="133" font-family="Arial, Helvetica, sans-serif" font-size="7" fill="#9D8B75">★ 4.8 (45)</text>
+        </g>
+
+        <!-- Card 4 — Wax Sealer -->
+        <g transform="translate(348, 184)">
+          <rect x="0" y="0" width="76" height="138" rx="6" fill="#FFFEFB" stroke="#E0D8C5" stroke-width=".8" filter="url(#bf-card-shadow)"/>
+          <rect x="6" y="6" width="64" height="78" rx="3" fill="url(#bf-brass-bg)"/>
+          <!-- brass wax sealer illustration -->
+          <g transform="translate(38, 48)">
+            <!-- wood handle -->
+            <rect x="-3.5" y="-22" width="7" height="22" rx="1.5" fill="#7C4F2C" stroke="#5A3719" stroke-width=".5"/>
+            <line x1="-3" y1="-18" x2="3" y2="-18" stroke="#5A3719" stroke-width=".4" opacity=".5"/>
+            <line x1="-3" y1="-14" x2="3" y2="-14" stroke="#5A3719" stroke-width=".4" opacity=".5"/>
+            <line x1="-3" y1="-10" x2="3" y2="-10" stroke="#5A3719" stroke-width=".4" opacity=".5"/>
+            <!-- brass collar -->
+            <rect x="-6" y="-1" width="12" height="5" rx="1" fill="url(#bf-brass)" stroke="#7E5E20" stroke-width=".5"/>
+            <!-- brass disc -->
+            <circle cx="0" cy="9" r="9" fill="url(#bf-brass)" stroke="#7E5E20" stroke-width=".7"/>
+            <text x="0" y="13" font-family="Georgia, serif" font-size="10" fill="#5A3F0E" text-anchor="middle" font-weight="700" font-style="italic" opacity=".85">y</text>
+            <!-- shadow -->
+            <ellipse cx="0" cy="22" rx="11" ry="1.6" fill="#1A1816" opacity=".22"/>
+          </g>
+          <circle cx="62" cy="14" r="7.5" fill="rgba(255,254,251,.85)"/>
+          <path d="M59 13 C59 11 60.5 10 62 11.5 C63.5 10 65 11 65 13 C65 15 62 17 62 17 C62 17 59 15 59 13 Z" fill="none" stroke="#1A1816" stroke-width="1"/>
+          <text x="6" y="98" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#1A1816" font-weight="700">Wax Sealer</text>
+          <text x="6" y="108" font-family="Arial, Helvetica, sans-serif" font-size="7.5" fill="#9D8B75">brass · vintage</text>
+          <text x="6" y="124" font-family="Georgia, serif" font-size="13" fill="#1A1816" font-weight="700">$18</text>
+        </g>
+
+        <!-- AUDIT: dashed coral ring on Card 1 -->
+        <rect x="32" y="180" width="100" height="146" rx="9" fill="none" stroke="#C72A1F" stroke-width="2.4" stroke-dasharray="5 4" opacity=".88">
+          <animate attributeName="opacity" values=".55;1;.55" dur="2s" repeatCount="indefinite"/>
+        </rect>
+
+        <!-- TEAL CHECK badge on Card 2 -->
+        <g transform="translate(220, 192)">
+          <circle cx="0" cy="0" r="11" fill="#1D6B6B" stroke="#FFFEFB" stroke-width="2"/>
+          <path d="M-4.5 0 L-1 3.5 L5 -3" stroke="#FFFEFB" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+
+        <!-- HANDWRITTEN AUDIT NOTES -->
+        <g transform="translate(8, 350)">
+          <text font-family="Caveat, cursive" font-size="20" fill="#C72A1F" font-weight="700" transform="rotate(-3)">fix this thumbnail!</text>
+          <path d="M40 -8 Q60 -28 78 -56" fill="none" stroke="#C72A1F" stroke-width="1.8" stroke-linecap="round"/>
+          <polyline points="74,-52 78,-56 82,-52" fill="none" stroke="#C72A1F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <g transform="translate(232, 144) rotate(4)">
+          <text font-family="Caveat, cursive" font-size="17" fill="#1D6B6B" font-weight="700">this works!!</text>
+          <path d="M14 6 Q18 26 14 50" fill="none" stroke="#1D6B6B" stroke-width="1.5" stroke-linecap="round"/>
+          <polyline points="10,46 14,52 18,46" fill="none" stroke="#1D6B6B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <g transform="translate(264, 350) rotate(-1)">
+          <text font-family="Caveat, cursive" font-size="17" fill="#C45D45" font-weight="700">stronger title?</text>
+          <path d="M30 -10 Q40 -28 36 -50" fill="none" stroke="#C45D45" stroke-width="1.5" stroke-linecap="round"/>
+          <polyline points="32,-46 36,-50 40,-46" fill="none" stroke="#C45D45" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+
+        <!-- BAILEY VIDEO CIRCLE (top-right corner of browser) -->
+        <g transform="translate(360, 96)" filter="url(#bf-shadow)">
+          <circle cx="34" cy="34" r="38" fill="url(#bf-baileyring)" opacity=".18"/>
+          <circle cx="34" cy="34" r="34" fill="none" stroke="url(#bf-baileyring)" stroke-width="3"/>
+          <image href="https://raw.githubusercontent.com/seeeadd/march-2026-main-hto-checkout-bailey/main/vipupsell/Bailey%20Facecard%206.png" x="2" y="2" width="64" height="64" preserveAspectRatio="xMidYMid slice" clip-path="url(#bf-bailey-clip)"/>
+          <circle cx="34" cy="34" r="34" fill="none" stroke="#FFFEFB" stroke-width="2.5"/>
+          <!-- REC pill -->
+          <rect x="11" y="-7" width="46" height="15" rx="7.5" fill="#C72A1F"/>
+          <circle cx="20" cy=".5" r="2.6" fill="#FFFEFB">
+            <animate attributeName="opacity" values="1;.35;1" dur="1.4s" repeatCount="indefinite"/>
+          </circle>
+          <text x="40" y="3.5" font-family="Arial, Helvetica, sans-serif" font-size="8.5" fill="#FFFEFB" text-anchor="middle" font-weight="900" letter-spacing=".8">REC</text>
+        </g>
+
+        <!-- Bailey signature bottom-right -->
+        <g transform="translate(310, 386)">
+          <path d="M0 4 Q8 -4 16 4 T32 4 T48 4 Q52 0 56 6" fill="none" stroke="#C45D45" stroke-width="1.6" stroke-linecap="round"/>
+          <text x="6" y="18" font-family="Caveat, cursive" font-size="14" fill="#1A1816" opacity=".6" font-weight="600">— bailey, recorded for you</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
 <!-- ═══ SECTION 1B: OFFER SUMMARY — Editorial Magazine Stack ═══ -->
 <section class="offer-summary">
   <img class="offer-tree offer-tree-left" src="botanical-3.png" alt="" aria-hidden="true" loading="lazy">
@@ -5043,7 +5357,7 @@ function heroBuyScroll(e){
 
     <div class="wb-title-block">
       <div class="wb-kicker">for this workshop only</div>
-      <h2 class="wb-title" id="wb-title">Three bonuses that <em>disappear</em> at midnight Saturday May 2</h2>
+      <h2 class="wb-title" id="wb-title">Two bonuses that <em>disappear</em> at midnight Saturday May 2</h2>
       <p class="wb-sub">Every monthly workshop comes with its own unique bonuses, tied to that month's build. <strong>These three belong to this workshop.</strong></p>
     </div>
 
@@ -5259,120 +5573,187 @@ function heroBuyScroll(e){
       <div class="wb-art" aria-hidden="true">
         <svg viewBox="0 0 360 340" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <linearGradient id="wb3-screen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFEFB"/><stop offset="1" stop-color="#F8EDDB"/></linearGradient>
+            <linearGradient id="wb3-linen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EDD6B4"/><stop offset="1" stop-color="#D8B98A"/></linearGradient>
+            <linearGradient id="wb3-wax-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EBEFE0"/><stop offset="1" stop-color="#C8D3BB"/></linearGradient>
+            <linearGradient id="wb3-wax" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D5DCC8"/><stop offset="1" stop-color="#A2B597"/></linearGradient>
+            <radialGradient id="wb3-flame" cx=".5" cy=".7" r=".5"><stop offset="0" stop-color="#FFF1A8"/><stop offset=".6" stop-color="#FFA64C"/><stop offset="1" stop-color="#E07A5F" stop-opacity="0"/></radialGradient>
+            <linearGradient id="wb3-mug-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F2D9DC"/><stop offset="1" stop-color="#D6A8AE"/></linearGradient>
+            <linearGradient id="wb3-mug" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFEFB"/><stop offset=".5" stop-color="#F0E6E0"/><stop offset="1" stop-color="#C8B5B0"/></linearGradient>
+            <linearGradient id="wb3-ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E07A5F"/><stop offset="1" stop-color="#C45D45"/></linearGradient>
+            <clipPath id="wb3-bailey-clip"><circle cx="26" cy="26" r="24"/></clipPath>
+            <filter id="wb3-shadow" x="-10%" y="-10%" width="120%" height="120%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity=".12"/></filter>
           </defs>
-          <!-- botanical accent -->
-          <g opacity=".08" transform="translate(-10, 268) rotate(-12)">
-            <path d="M20 26 Q60 8 100 20 T180 24" fill="none" stroke="#1D6B6B" stroke-width="2" stroke-linecap="round"/>
-            <ellipse cx="46" cy="26" rx="14" ry="6" fill="#1D6B6B" transform="rotate(20 46 26)"/>
-            <ellipse cx="78" cy="22" rx="14" ry="6" fill="#1D6B6B" transform="rotate(12 78 22)"/>
-            <ellipse cx="116" cy="24" rx="16" ry="7" fill="#1D6B6B" transform="rotate(4 116 24)"/>
-            <ellipse cx="150" cy="26" rx="12" ry="5" fill="#1D6B6B" transform="rotate(0 150 26)"/>
+
+          <!-- BROWSER WINDOW -->
+          <g filter="url(#wb3-shadow)">
+            <rect x="16" y="28" width="328" height="264" rx="10" fill="#FFFEFB" stroke="#1A1816" stroke-width=".8"/>
+            <!-- top chrome -->
+            <rect x="16" y="28" width="328" height="28" rx="10" fill="#F0E8D5"/>
+            <rect x="16" y="44" width="328" height="12" fill="#F0E8D5"/>
+            <line x1="16" y1="56" x2="344" y2="56" stroke="#E0D8C5" stroke-width=".5"/>
+            <!-- traffic lights -->
+            <circle cx="30" cy="42" r="3.6" fill="#FF5F57" stroke="#E04A45" stroke-width=".4"/>
+            <circle cx="42" cy="42" r="3.6" fill="#FEBC2E" stroke="#E0A621" stroke-width=".4"/>
+            <circle cx="54" cy="42" r="3.6" fill="#28C840" stroke="#1FA632" stroke-width=".4"/>
+            <!-- url pill -->
+            <rect x="72" y="35" width="200" height="14" rx="7" fill="#FFFEFB" stroke="#E0D8C5" stroke-width=".5"/>
+            <circle cx="82" cy="42" r="2" fill="#1D6B6B" opacity=".7"/>
+            <text x="90" y="45" font-family="Arial, Helvetica, sans-serif" font-size="7.5" fill="#5a534a" font-weight="500">etsy.com/shop/yourshop</text>
           </g>
-          <!-- laptop/browser frame -->
-          <g transform="translate(30, 52)">
-            <!-- shadow -->
-            <rect x="4" y="6" width="300" height="216" rx="10" fill="#1A1816" opacity=".1"/>
-            <!-- body -->
-            <rect x="0" y="0" width="300" height="216" rx="10" fill="#FFFEFB" stroke="#1A1816" stroke-width="1.2"/>
-            <!-- browser chrome -->
-            <rect x="0" y="0" width="300" height="22" rx="10" fill="#1A1816"/>
-            <rect x="0" y="12" width="300" height="10" fill="#1A1816"/>
-            <circle cx="12" cy="11" r="3" fill="#E07A5F"/>
-            <circle cx="24" cy="11" r="3" fill="#D4A853"/>
-            <circle cx="36" cy="11" r="3" fill="#1D6B6B"/>
-            <rect x="56" y="6" width="200" height="11" rx="5.5" fill="#2A2520"/>
-            <!-- shop canvas -->
-            <rect x="10" y="30" width="280" height="178" rx="6" fill="url(#wb3-screen)"/>
-            <!-- shop banner -->
-            <rect x="20" y="40" width="260" height="26" rx="4" fill="#F5EEDC" stroke="#1A1816" stroke-width=".8"/>
-            <text x="30" y="57" font-family="Georgia, 'Ogg', serif" font-size="12" fill="#1A1816" font-weight="700" letter-spacing=".4">your shop</text>
-            <text x="30" y="57" font-family="Georgia, 'Ogg', serif" font-size="12" fill="#1A1816" font-style="italic" opacity="0"></text>
-            <g transform="translate(200, 52)">
-              <path d="M0 -4 L1.5 -1 L4.5 0 L1.5 1 L0 4 L-1.5 1 L-4.5 0 L-1.5 -1 Z" fill="#D4A853"/>
-              <path d="M12 -3 L13 -1 L15 0 L13 1 L12 3 L11 1 L9 0 L11 -1 Z" fill="#D4A853" opacity=".7"/>
-              <path d="M22 -2 L23 -1 L24 0 L23 1 L22 2 L21 1 L20 0 L21 -1 Z" fill="#D4A853" opacity=".5"/>
-              <text x="36" y="4" font-family="Georgia, serif" font-size="9" fill="#1A1816">Star Seller</text>
+
+          <!-- Shop header row inside browser -->
+          <g transform="translate(28, 68)">
+            <circle cx="14" cy="14" r="13" fill="#1D6B6B"/>
+            <text x="14" y="18" font-family="Georgia, serif" font-size="11" fill="#FFFEFB" text-anchor="middle" font-weight="700" font-style="italic">y</text>
+            <text x="34" y="11" font-family="Georgia, 'Ogg', serif" font-size="10" fill="#1A1816" font-weight="700">your shop</text>
+            <g transform="translate(34, 18)">
+              <path d="M0 -1.6 L1.2 .8 L3.8 1.1 L1.8 3 L2.4 5.6 L0 4.2 L-2.4 5.6 L-1.8 3 L-3.8 1.1 L-1.2 .8 Z" fill="#D4A853"/>
+              <text x="7" y="2.6" font-family="Arial, Helvetica, sans-serif" font-size="7" fill="#3a3632" font-weight="600">Star Seller</text>
+              <text x="52" y="2.6" font-family="Arial, Helvetica, sans-serif" font-size="6.5" fill="#9D8B75">·  238 sales  ·  4.9 ★</text>
             </g>
-            <!-- product grid 2x2 -->
-            <!-- tile 1 (FIX) -->
-            <rect x="20" y="74" width="60" height="60" rx="4" fill="#F5EEDC" stroke="#1A1816" stroke-width=".8"/>
-            <rect x="25" y="79" width="50" height="38" rx="2" fill="#D4A853" opacity=".55"/>
-            <rect x="25" y="120" width="38" height="3" rx="1.5" fill="#1A1816" opacity=".55"/>
-            <rect x="25" y="127" width="22" height="3" rx="1.5" fill="#1A1816" opacity=".4"/>
-            <!-- tile 2 (KEEP/WORKS) -->
-            <rect x="90" y="74" width="60" height="60" rx="4" fill="#F5EEDC" stroke="#1A1816" stroke-width=".8"/>
-            <rect x="95" y="79" width="50" height="38" rx="2" fill="#1D6B6B" opacity=".55"/>
-            <rect x="95" y="120" width="38" height="3" rx="1.5" fill="#1A1816" opacity=".55"/>
-            <rect x="95" y="127" width="22" height="3" rx="1.5" fill="#1A1816" opacity=".4"/>
-            <!-- tile 3 -->
-            <rect x="160" y="74" width="60" height="60" rx="4" fill="#F5EEDC" stroke="#1A1816" stroke-width=".8"/>
-            <rect x="165" y="79" width="50" height="38" rx="2" fill="#E07A5F" opacity=".5"/>
-            <rect x="165" y="120" width="38" height="3" rx="1.5" fill="#1A1816" opacity=".55"/>
-            <rect x="165" y="127" width="22" height="3" rx="1.5" fill="#1A1816" opacity=".4"/>
-            <!-- tile 4 -->
-            <rect x="230" y="74" width="60" height="60" rx="4" fill="#F5EEDC" stroke="#1A1816" stroke-width=".8"/>
-            <rect x="235" y="79" width="50" height="38" rx="2" fill="#D4A853" opacity=".5"/>
-            <rect x="235" y="120" width="38" height="3" rx="1.5" fill="#1A1816" opacity=".55"/>
-            <rect x="235" y="127" width="22" height="3" rx="1.5" fill="#1A1816" opacity=".4"/>
-            <!-- shop stats row -->
-            <rect x="20" y="148" width="48" height="4" rx="2" fill="#1A1816" opacity=".55"/>
-            <rect x="76" y="148" width="68" height="4" rx="2" fill="#1A1816" opacity=".4"/>
-            <rect x="152" y="148" width="54" height="4" rx="2" fill="#1A1816" opacity=".4"/>
-            <rect x="20" y="158" width="106" height="3" rx="1.5" fill="#1A1816" opacity=".3"/>
-            <rect x="20" y="166" width="86" height="3" rx="1.5" fill="#1A1816" opacity=".25"/>
-            <rect x="20" y="174" width="130" height="3" rx="1.5" fill="#1A1816" opacity=".25"/>
-            <!-- AUDIT OVERLAYS -->
-            <!-- tile 1: coral dashed circle -->
-            <rect x="15" y="69" width="70" height="70" rx="6" fill="none" stroke="#E07A5F" stroke-width="2" stroke-dasharray="4 3"/>
-            <!-- arrow from fix note to tile 1 -->
-            <path d="M-6 132 Q10 124 16 110" fill="none" stroke="#E07A5F" stroke-width="1.6" stroke-linecap="round"/>
-            <polyline points="12,114 16,110 20,114" fill="none" stroke="#E07A5F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <!-- tile 2: teal check -->
-            <g transform="translate(146, 80)">
-              <circle cx="0" cy="0" r="9" fill="#1D6B6B"/>
-              <path d="M-4 0 L-1 3 L4 -3" stroke="#FFFEFB" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+
+          <!-- divider -->
+          <line x1="28" y1="104" x2="332" y2="104" stroke="#E8E0CD" stroke-width=".6"/>
+
+          <!-- 3 listing cards with real products -->
+          <!-- Card 1 — Linen Tea Towel (UNDERPERFORMING) -->
+          <g transform="translate(28, 116)">
+            <rect x="0" y="0" width="92" height="112" rx="5" fill="#FFFEFB" stroke="#E0D8C5" stroke-width=".7" filter="url(#wb3-shadow)"/>
+            <rect x="5" y="5" width="82" height="64" rx="3" fill="url(#wb3-linen)"/>
+            <!-- folded towel -->
+            <g transform="translate(46, 38)">
+              <rect x="-22" y="-10" width="44" height="18" rx="1.5" fill="#FBF5E8" stroke="#9C7843" stroke-width=".5"/>
+              <line x1="-22" y1="-5" x2="22" y2="-5" stroke="#9C7843" stroke-width=".4" opacity=".6"/>
+              <line x1="-22" y1="0" x2="22" y2="0" stroke="#9C7843" stroke-width=".4" opacity=".5"/>
+              <text x="0" y="3" font-family="Georgia, serif" font-size="8" fill="#9C7843" text-anchor="middle" font-style="italic" opacity=".7">y</text>
+              <ellipse cx="0" cy="10" rx="22" ry="1.6" fill="#1A1816" opacity=".15"/>
             </g>
-            <!-- tile 3: arrow pointing in -->
-            <path d="M210 154 Q200 148 196 138" fill="none" stroke="#E07A5F" stroke-width="1.5" stroke-linecap="round"/>
-            <polyline points="192,142 196,138 200,142" fill="none" stroke="#E07A5F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- heart -->
+            <circle cx="80" cy="12" r="6.5" fill="rgba(255,254,251,.85)"/>
+            <path d="M77 11 C77 9.4 78.2 8.6 80 9.8 C81.8 8.6 83 9.4 83 11 C83 12.6 80 14.2 80 14.2 C80 14.2 77 12.6 77 11 Z" fill="none" stroke="#1A1816" stroke-width=".9"/>
+            <!-- price + text -->
+            <text x="5" y="82" font-family="Arial, Helvetica, sans-serif" font-size="8" fill="#1A1816" font-weight="700">Linen Tea Towel</text>
+            <text x="5" y="91" font-family="Arial, Helvetica, sans-serif" font-size="6.5" fill="#9D8B75">handmade</text>
+            <text x="5" y="105" font-family="Georgia, serif" font-size="11" fill="#1A1816" font-weight="700">$24</text>
+            <text x="87" y="105" font-family="Arial, Helvetica, sans-serif" font-size="6.5" fill="#9D8B75" text-anchor="end">★ 4.7</text>
           </g>
-          <!-- handwritten audit labels -->
-          <g transform="translate(4, 224) rotate(-4)">
-            <text font-family="Caveat, cursive" font-size="18" fill="#E07A5F" font-weight="700">fix thumbnail</text>
+
+          <!-- Card 2 — Sage Candles (WORKING) -->
+          <g transform="translate(130, 116)">
+            <rect x="0" y="0" width="92" height="112" rx="5" fill="#FFFEFB" stroke="#E0D8C5" stroke-width=".7" filter="url(#wb3-shadow)"/>
+            <rect x="5" y="5" width="82" height="64" rx="3" fill="url(#wb3-wax-bg)"/>
+            <!-- candles -->
+            <g transform="translate(46, 40)">
+              <rect x="-2" y="-8" width="12" height="18" rx="1" fill="url(#wb3-wax)" stroke="#7B8C6F" stroke-width=".3"/>
+              <line x1="4" y1="-11" x2="4" y2="-8" stroke="#1A1816" stroke-width=".6"/>
+              <ellipse cx="4" cy="-13" rx="2" ry="3" fill="url(#wb3-flame)"/>
+              <rect x="-14" y="-12" width="12" height="22" rx="1" fill="url(#wb3-wax)" stroke="#7B8C6F" stroke-width=".3"/>
+              <line x1="-8" y1="-15" x2="-8" y2="-12" stroke="#1A1816" stroke-width=".6"/>
+              <ellipse cx="-8" cy="-17" rx="2.2" ry="3.4" fill="url(#wb3-flame)"/>
+              <ellipse cx="-2" cy="-19" rx="12" ry="4.5" fill="#FFE8B8" opacity=".35"/>
+              <ellipse cx="-2" cy="11" rx="17" ry="1.4" fill="#1A1816" opacity=".18"/>
+            </g>
+            <!-- heart (filled) -->
+            <circle cx="80" cy="12" r="6.5" fill="rgba(255,254,251,.85)"/>
+            <path d="M77 11 C77 9.4 78.2 8.6 80 9.8 C81.8 8.6 83 9.4 83 11 C83 12.6 80 14.2 80 14.2 C80 14.2 77 12.6 77 11 Z" fill="#E07A5F" stroke="#C45D45" stroke-width=".6"/>
+            <text x="5" y="82" font-family="Arial, Helvetica, sans-serif" font-size="8" fill="#1A1816" font-weight="700">Sage Candles</text>
+            <text x="5" y="91" font-family="Arial, Helvetica, sans-serif" font-size="6.5" fill="#9D8B75">soy · hand-poured</text>
+            <text x="5" y="105" font-family="Georgia, serif" font-size="11" fill="#1A1816" font-weight="700">$38</text>
+            <text x="87" y="105" font-family="Arial, Helvetica, sans-serif" font-size="6.5" fill="#1D6B6B" text-anchor="end" font-weight="700">★ 4.9</text>
           </g>
-          <g transform="translate(188, 150) rotate(3)">
-            <text font-family="Caveat, cursive" font-size="16" fill="#1D6B6B" font-weight="700">this works!</text>
+
+          <!-- Card 3 — Ceramic Mug -->
+          <g transform="translate(232, 116)">
+            <rect x="0" y="0" width="92" height="112" rx="5" fill="#FFFEFB" stroke="#E0D8C5" stroke-width=".7" filter="url(#wb3-shadow)"/>
+            <rect x="5" y="5" width="82" height="64" rx="3" fill="url(#wb3-mug-bg)"/>
+            <!-- mug -->
+            <g transform="translate(46, 40)">
+              <path d="M-3 -18 Q-6 -24 -2 -27" fill="none" stroke="#FFFEFB" stroke-width="1.1" stroke-linecap="round" opacity=".75"/>
+              <path d="M3 -18 Q0 -24 4 -27" fill="none" stroke="#FFFEFB" stroke-width="1.1" stroke-linecap="round" opacity=".55"/>
+              <path d="M-12 -13 L-13 10 Q-13 13 -10 13 L8 13 Q11 13 11 10 L10 -13 Z" fill="url(#wb3-mug)" stroke="#1A1816" stroke-width=".6"/>
+              <ellipse cx="-1" cy="-13" rx="11" ry="2.2" fill="#5A3A20"/>
+              <ellipse cx="-1" cy="-13" rx="8" ry="1.5" fill="#7B5230"/>
+              <path d="M11 -6 Q20 -6 20 1 Q20 8 11 8" fill="none" stroke="#1A1816" stroke-width="1.2" stroke-linecap="round"/>
+              <ellipse cx="-1" cy="15" rx="13" ry="1.4" fill="#1A1816" opacity=".18"/>
+            </g>
+            <circle cx="80" cy="12" r="6.5" fill="rgba(255,254,251,.85)"/>
+            <path d="M77 11 C77 9.4 78.2 8.6 80 9.8 C81.8 8.6 83 9.4 83 11 C83 12.6 80 14.2 80 14.2 C80 14.2 77 12.6 77 11 Z" fill="none" stroke="#1A1816" stroke-width=".9"/>
+            <text x="5" y="82" font-family="Arial, Helvetica, sans-serif" font-size="8" fill="#1A1816" font-weight="700">Ceramic Mug</text>
+            <text x="5" y="91" font-family="Arial, Helvetica, sans-serif" font-size="6.5" fill="#9D8B75">stoneware · 12oz</text>
+            <text x="5" y="105" font-family="Georgia, serif" font-size="11" fill="#1A1816" font-weight="700">$28</text>
+            <text x="87" y="105" font-family="Arial, Helvetica, sans-serif" font-size="6.5" fill="#9D8B75" text-anchor="end">★ 4.8</text>
           </g>
-          <g transform="translate(218, 234) rotate(-2)">
-            <text font-family="Caveat, cursive" font-size="16" fill="#E07A5F" font-weight="700">stronger title?</text>
+
+          <!-- AUDIT: dashed coral ring on Card 1 -->
+          <rect x="24" y="112" width="100" height="120" rx="8" fill="none" stroke="#C72A1F" stroke-width="2.2" stroke-dasharray="5 4" opacity=".88">
+            <animate attributeName="opacity" values=".55;1;.55" dur="2s" repeatCount="indefinite"/>
+          </rect>
+
+          <!-- TEAL CHECK on Card 2 -->
+          <g transform="translate(215, 124)">
+            <circle cx="0" cy="0" r="10" fill="#1D6B6B" stroke="#FFFEFB" stroke-width="1.8"/>
+            <path d="M-4 0 L-1 3 L4 -3" stroke="#FFFEFB" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
           </g>
-          <!-- seat counter chip top-right -->
-          <g transform="translate(240, 14)">
-            <rect x="0" y="0" width="104" height="30" rx="15" fill="#E07A5F"/>
-            <circle cx="15" cy="15" r="4" fill="#FFFEFB" opacity=".9"/>
-            <text x="58" y="19" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#FFFEFB" font-weight="800" letter-spacing=".8">ONLY 25 SEATS</text>
+
+          <!-- handwritten notes -->
+          <g transform="translate(14, 258) rotate(-3)">
+            <text font-family="Caveat, cursive" font-size="17" fill="#C72A1F" font-weight="700">fix thumbnail!</text>
+            <path d="M28 -6 Q46 -22 66 -34" fill="none" stroke="#C72A1F" stroke-width="1.5" stroke-linecap="round"/>
+            <polyline points="62,-30 66,-34 70,-30" fill="none" stroke="#C72A1F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </g>
-          <!-- Bailey signature squiggle -->
-          <g transform="translate(244, 288)">
-            <path d="M0 8 Q6 0 12 8 T24 8 T36 8" fill="none" stroke="#E07A5F" stroke-width="1.8" stroke-linecap="round"/>
-            <path d="M2 14 Q10 10 18 14" fill="none" stroke="#E07A5F" stroke-width="1.4" stroke-linecap="round" opacity=".6"/>
+          <g transform="translate(220, 86) rotate(4)">
+            <text font-family="Caveat, cursive" font-size="14" fill="#1D6B6B" font-weight="700">this works!</text>
+            <path d="M14 4 Q18 20 14 36" fill="none" stroke="#1D6B6B" stroke-width="1.3" stroke-linecap="round"/>
+            <polyline points="10,32 14,38 18,32" fill="none" stroke="#1D6B6B" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
           </g>
-          <text x="248" y="314" font-family="Caveat, cursive" font-size="14" fill="#1A1816" opacity=".55">&#8212; bailey</text>
+          <g transform="translate(204, 270) rotate(-2)">
+            <text font-family="Caveat, cursive" font-size="14" fill="#C45D45" font-weight="700">stronger title?</text>
+            <path d="M28 -10 Q40 -24 58 -38" fill="none" stroke="#C45D45" stroke-width="1.3" stroke-linecap="round"/>
+            <polyline points="54,-34 58,-38 62,-34" fill="none" stroke="#C45D45" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+
+          <!-- Bailey REC bubble — top-right of browser -->
+          <g transform="translate(282, 70)" filter="url(#wb3-shadow)">
+            <circle cx="26" cy="26" r="29" fill="url(#wb3-ring)" opacity=".18"/>
+            <circle cx="26" cy="26" r="26" fill="none" stroke="url(#wb3-ring)" stroke-width="2.4"/>
+            <image href="https://raw.githubusercontent.com/seeeadd/march-2026-main-hto-checkout-bailey/main/vipupsell/Bailey%20Facecard%206.png" x="2" y="2" width="48" height="48" preserveAspectRatio="xMidYMid slice" clip-path="url(#wb3-bailey-clip)"/>
+            <circle cx="26" cy="26" r="26" fill="none" stroke="#FFFEFB" stroke-width="2"/>
+            <rect x="8" y="-5" width="36" height="12" rx="6" fill="#C72A1F"/>
+            <circle cx="14" cy="1" r="2" fill="#FFFEFB">
+              <animate attributeName="opacity" values="1;.35;1" dur="1.4s" repeatCount="indefinite"/>
+            </circle>
+            <text x="30" y="3" font-family="Arial, Helvetica, sans-serif" font-size="7" fill="#FFFEFB" text-anchor="middle" font-weight="900" letter-spacing=".7">REC</text>
+          </g>
+
+          <!-- ONLY 25 SEATS chip top-left (moved from top-right to not collide with Bailey bubble) -->
+          <g transform="translate(20, 8)">
+            <rect x="0" y="0" width="116" height="18" rx="9" fill="#C72A1F"/>
+            <circle cx="11" cy="9" r="2.8" fill="#FFFEFB" opacity=".9">
+              <animate attributeName="opacity" values="1;.4;1" dur="1.4s" repeatCount="indefinite"/>
+            </circle>
+            <text x="66" y="12.5" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#FFFEFB" font-weight="900" letter-spacing="1.2">ONLY 25 SEATS</text>
+          </g>
+
+          <!-- Bailey signature bottom-right -->
+          <g transform="translate(236, 304)">
+            <path d="M0 4 Q6 -4 12 4 T24 4 T36 4 Q40 0 44 6" fill="none" stroke="#C45D45" stroke-width="1.4" stroke-linecap="round"/>
+            <text x="6" y="18" font-family="Caveat, cursive" font-size="12" fill="#1A1816" opacity=".6" font-weight="600">— bailey, for you</text>
+          </g>
         </svg>
       </div>
     </article>
 
-    <div class="wb-foot">All three disappear at <strong>midnight Saturday May 2</strong>. The code and the bonuses go together.</div>
+    <div class="wb-foot">Both disappear at <strong>midnight Saturday May 2</strong>. The code and the bonuses go together.</div>
 
   </div>
 </section>
 
 <!-- ═══ DO-THE-WORK GUARANTEE (restore old guarantee-alt on May 3) ═══ -->
 <style>
-.dtw-guarantee{position:relative;padding:96px 72px 96px;background:linear-gradient(180deg,var(--warm) 0,var(--cream) 100%);overflow:hidden}
+.dtw-guarantee{position:relative;padding:36px 72px 88px;background:linear-gradient(180deg,var(--warm) 0,var(--cream) 100%);overflow:hidden}
 .dtw-inner{max-width:820px;margin:0 auto;position:relative;z-index:1;text-align:center}
-.dtw-seal{width:96px;height:96px;margin:0 auto 28px;position:relative}
+.dtw-seal{width:168px;height:168px;margin:0 auto 18px;position:relative;filter:drop-shadow(0 12px 28px rgba(26,24,22,.14)) drop-shadow(0 4px 10px rgba(212,168,83,.18))}
 .dtw-seal svg{width:100%;height:100%;display:block}
 .dtw-kicker{font-family:var(--accent);font-size:24px;color:var(--coral);margin-bottom:6px;display:inline-block;transform:rotate(-2deg);letter-spacing:.2px}
 .dtw-title{font-family:var(--display);font-size:clamp(32px,4.4vw,46px);color:var(--dark);line-height:1.15;margin:0 0 22px;font-weight:700;letter-spacing:-.4px}
@@ -5403,14 +5784,112 @@ function heroBuyScroll(e){
 <section class="dtw-guarantee" aria-labelledby="dtw-title">
   <div class="dtw-inner">
     <div class="dtw-seal" aria-hidden="true">
-      <svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="48" cy="48" r="46" fill="none" stroke="#D4A853" stroke-width="1.4" stroke-dasharray="3 4" opacity=".6"/>
-        <path d="M48 10 L78 20 Q78 56 48 84 Q18 56 18 20 Z" fill="#FFFEFB" stroke="#1A1816" stroke-width="1.6"/>
-        <path d="M48 16 L72 25 Q72 54 48 77 Q24 54 24 25 Z" fill="none" stroke="#E07A5F" stroke-width="1.2" opacity=".4"/>
-        <text x="48" y="50" font-family="Georgia, 'Ogg', serif" font-size="22" font-weight="700" fill="#1A1816" text-anchor="middle" font-style="italic">30</text>
-        <text x="48" y="64" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="700" fill="#1D6B6B" text-anchor="middle" letter-spacing="1.4">DAYS</text>
-        <path d="M32 32 L33 34.5 L35.5 35.5 L33 36.5 L32 39 L31 36.5 L28.5 35.5 L31 34.5 Z" fill="#E07A5F" opacity=".85"/>
-        <path d="M64 62 L65 64 L67 64.8 L65 65.6 L64 68 L63 65.6 L61 64.8 L63 64 Z" fill="#D4A853" opacity=".85"/>
+      <svg viewBox="0 0 168 168" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <path id="dtw-text-path" d="M 84 84 m -68 0 a 68 68 0 1 1 136 0 a 68 68 0 1 1 -136 0"/>
+          <radialGradient id="dtw-medal-grad" cx=".5" cy=".4" r=".7">
+            <stop offset="0" stop-color="#FFFEFB"/>
+            <stop offset=".7" stop-color="#FBF2DD"/>
+            <stop offset="1" stop-color="#E8D5A8"/>
+          </radialGradient>
+          <linearGradient id="dtw-ribbon-grad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#E07A5F"/>
+            <stop offset="1" stop-color="#A4452F"/>
+          </linearGradient>
+          <linearGradient id="dtw-gold-grad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#E8C672"/>
+            <stop offset="1" stop-color="#A8842F"/>
+          </linearGradient>
+          <filter id="dtw-emboss" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity=".18"/>
+          </filter>
+        </defs>
+
+        <!-- ROTATING OUTER RING with curved text -->
+        <g>
+          <animateTransform attributeName="transform" type="rotate" from="0 84 84" to="360 84 84" dur="42s" repeatCount="indefinite"/>
+          <!-- outer dashed ring -->
+          <circle cx="84" cy="84" r="80" fill="none" stroke="#D4A853" stroke-width="1.2" stroke-dasharray="2 4" opacity=".7"/>
+          <!-- inner thin solid ring -->
+          <circle cx="84" cy="84" r="74" fill="none" stroke="#1A1816" stroke-width=".5" opacity=".4"/>
+          <!-- curved text (circles around) -->
+          <text font-family="Arial, Helvetica, sans-serif" font-size="8.6" font-weight="900" fill="#1A1816" letter-spacing="2.8">
+            <textPath href="#dtw-text-path" startOffset="0">DO-THE-WORK GUARANTEE  •  PROVE YOU USED IT  •  </textPath>
+          </text>
+          <!-- compass-point coral diamonds -->
+          <g fill="#E07A5F">
+            <path d="M84 4 L86 8 L84 12 L82 8 Z"/>
+            <path d="M164 84 L160 86 L156 84 L160 82 Z"/>
+            <path d="M84 164 L82 160 L84 156 L86 160 Z"/>
+            <path d="M4 84 L8 82 L12 84 L8 86 Z"/>
+          </g>
+        </g>
+
+        <!-- STATIC INNER MEDALLION -->
+        <g filter="url(#dtw-emboss)">
+          <!-- medal background -->
+          <circle cx="84" cy="84" r="58" fill="url(#dtw-medal-grad)" stroke="#A8842F" stroke-width="1.2"/>
+          <circle cx="84" cy="84" r="54" fill="none" stroke="#D4A853" stroke-width=".6" opacity=".5"/>
+          <!-- subtle scallop edge -->
+          <circle cx="84" cy="84" r="56" fill="none" stroke="#A8842F" stroke-width=".4" stroke-dasharray=".5 2.5" opacity=".5"/>
+        </g>
+
+        <!-- LAUREL BRANCHES -->
+        <!-- left laurel -->
+        <g transform="translate(36, 92)">
+          <path d="M0 0 Q-4 -10 0 -28" fill="none" stroke="#1D6B6B" stroke-width="1.4" stroke-linecap="round"/>
+          <ellipse cx="-3" cy="-4" rx="4" ry="1.8" fill="#1D6B6B" transform="rotate(-30 -3 -4)"/>
+          <ellipse cx="-2" cy="-11" rx="4" ry="1.8" fill="#1D6B6B" transform="rotate(-25 -2 -11)"/>
+          <ellipse cx="-1" cy="-18" rx="3.5" ry="1.6" fill="#1D6B6B" transform="rotate(-20 -1 -18)"/>
+          <ellipse cx="0" cy="-25" rx="3" ry="1.4" fill="#1D6B6B" transform="rotate(-15 0 -25)"/>
+          <path d="M0 0 Q-4 10 0 28" fill="none" stroke="#1D6B6B" stroke-width="1.4" stroke-linecap="round"/>
+          <ellipse cx="-3" cy="4" rx="4" ry="1.8" fill="#1D6B6B" transform="rotate(30 -3 4)"/>
+          <ellipse cx="-2" cy="11" rx="4" ry="1.8" fill="#1D6B6B" transform="rotate(25 -2 11)"/>
+          <ellipse cx="-1" cy="18" rx="3.5" ry="1.6" fill="#1D6B6B" transform="rotate(20 -1 18)"/>
+          <ellipse cx="0" cy="25" rx="3" ry="1.4" fill="#1D6B6B" transform="rotate(15 0 25)"/>
+        </g>
+        <!-- right laurel (mirrored) -->
+        <g transform="translate(132, 92) scale(-1, 1)">
+          <path d="M0 0 Q-4 -10 0 -28" fill="none" stroke="#1D6B6B" stroke-width="1.4" stroke-linecap="round"/>
+          <ellipse cx="-3" cy="-4" rx="4" ry="1.8" fill="#1D6B6B" transform="rotate(-30 -3 -4)"/>
+          <ellipse cx="-2" cy="-11" rx="4" ry="1.8" fill="#1D6B6B" transform="rotate(-25 -2 -11)"/>
+          <ellipse cx="-1" cy="-18" rx="3.5" ry="1.6" fill="#1D6B6B" transform="rotate(-20 -1 -18)"/>
+          <ellipse cx="0" cy="-25" rx="3" ry="1.4" fill="#1D6B6B" transform="rotate(-15 0 -25)"/>
+          <path d="M0 0 Q-4 10 0 28" fill="none" stroke="#1D6B6B" stroke-width="1.4" stroke-linecap="round"/>
+          <ellipse cx="-3" cy="4" rx="4" ry="1.8" fill="#1D6B6B" transform="rotate(30 -3 4)"/>
+          <ellipse cx="-2" cy="11" rx="4" ry="1.8" fill="#1D6B6B" transform="rotate(25 -2 11)"/>
+          <ellipse cx="-1" cy="18" rx="3.5" ry="1.6" fill="#1D6B6B" transform="rotate(20 -1 18)"/>
+          <ellipse cx="0" cy="25" rx="3" ry="1.4" fill="#1D6B6B" transform="rotate(15 0 25)"/>
+        </g>
+
+        <!-- BIG ITALIC "30" -->
+        <text x="84" y="98" font-family="Georgia, 'Ogg', serif" font-size="50" font-weight="700" fill="#1A1816" text-anchor="middle" font-style="italic" letter-spacing="-2.4">30</text>
+
+        <!-- "DAYS" -->
+        <text x="84" y="114" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="900" fill="#1D6B6B" text-anchor="middle" letter-spacing="3.8">DAYS</text>
+
+        <!-- TOP RIBBON BANNER -->
+        <g transform="translate(84, 38)" filter="url(#dtw-emboss)">
+          <path d="M-30 0 L30 0 L26 14 L-26 14 Z" fill="url(#dtw-ribbon-grad)" stroke="#7C2A18" stroke-width=".7"/>
+          <!-- ribbon notch left -->
+          <path d="M-30 0 L-36 8 L-30 14 L-26 7 Z" fill="#7C2A18"/>
+          <!-- ribbon notch right -->
+          <path d="M30 0 L36 8 L30 14 L26 7 Z" fill="#7C2A18"/>
+          <!-- ribbon highlight -->
+          <path d="M-28 2 L28 2" stroke="#FFFEFB" stroke-width=".6" opacity=".4"/>
+          <text x="0" y="9.5" font-family="Arial, Helvetica, sans-serif" font-size="6.5" font-weight="900" fill="#FFFEFB" text-anchor="middle" letter-spacing="2">CERTIFIED</text>
+        </g>
+
+        <!-- BOTTOM SIGNATURE -->
+        <text x="84" y="138" font-family="Caveat, cursive" font-size="11" fill="#A4452F" text-anchor="middle" font-weight="600" opacity=".75">bailey's promise</text>
+
+        <!-- DECORATIVE STARS -->
+        <g fill="#E07A5F">
+          <path d="M52 60 L53.4 63 L56.5 64 L53.4 65 L52 68 L50.6 65 L47.5 64 L50.6 63 Z"/>
+        </g>
+        <g fill="#D4A853">
+          <path d="M118 110 L119 112 L121 113 L119 114 L118 116 L117 114 L115 113 L117 112 Z" opacity=".75"/>
+        </g>
       </svg>
     </div>
 
@@ -6080,7 +6559,7 @@ function heroBuyScroll(e){
 
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">Is there a refund policy?</div>
-      <div class="faq-a"><p>All sales are final. There are no refunds on AI Income OS. This is clearly stated here, at checkout, and in the terms of service. I do this because the program includes lifetime access to coaching, community, daily research, and ongoing updates - and I want members who are committed to showing up. If you are not sure yet, that is okay. Take your time with the decision. There is no pressure.</p></div>
+      <div class="faq-a"><p>Yes. AI Income OS comes with a <strong>30-day "Do-The-Work" Guarantee</strong>. This isn't a no-questions-asked refund. It's built for people who actually show up, do the work, and still feel stuck after a real attempt. To qualify, you complete the <strong>7-Day Sprint</strong> (all seven days) and attend <strong>one Design Feedback Day</strong> or <strong>one monthly coaching call</strong>. Do both. If you're still not moving forward after 30 days, email Bailey and she'll refund every cent. No survey. No convincing. Just an email, and it's done. That's the whole policy.</p></div>
     </div>
 
     <div class="faq-item">
