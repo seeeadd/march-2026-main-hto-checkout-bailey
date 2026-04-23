@@ -4808,47 +4808,107 @@ function heroBuyScroll(e){
 
 <!-- ═══ FEATURED HIGHLIGHT: PERSONAL SHOP AUDIT (first 25 buyers only) ═══ -->
 <style>
-.bonus-featured{position:relative;padding:44px 72px 56px;background:linear-gradient(180deg,var(--cream) 0%,#F8EDE0 100%);overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.bonus-featured{position:relative;padding:56px 32px 72px;background:linear-gradient(180deg,var(--cream) 0%,#F4E8D4 100%);overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .bonus-featured::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 80% 0%,rgba(199,42,31,.05) 0%,transparent 60%),radial-gradient(ellipse 60% 60% at 10% 100%,rgba(212,168,83,.06) 0%,transparent 70%);pointer-events:none}
 .bf-tape{display:none}
-.bf-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:60px;align-items:center;position:relative;z-index:1}
-.bf-copy{min-width:0}
-.bf-label{display:inline-flex;align-items:center;gap:10px;background:#C72A1F;color:#FFFEFB;font-size:13px;font-weight:900;padding:10px 22px 10px 18px;border-radius:999px;margin-bottom:22px;text-transform:uppercase;letter-spacing:2px;font-family:Arial,Helvetica,sans-serif;box-shadow:0 8px 28px rgba(199,42,31,.32),0 2px 8px rgba(0,0,0,.1);position:relative}
-.bf-label-dot{width:9px;height:9px;border-radius:50%;background:#FFFEFB;box-shadow:0 0 0 0 rgba(255,254,251,.85);animation:bf-ping 1.4s ease-in-out infinite}
-@keyframes bf-ping{0%{box-shadow:0 0 0 0 rgba(255,254,251,.85)}70%{box-shadow:0 0 0 10px rgba(255,254,251,0)}100%{box-shadow:0 0 0 0 rgba(255,254,251,0)}}
-.bf-title{font-family:var(--display);font-size:clamp(32px,4vw,46px);color:var(--dark);line-height:1.12;margin:0 0 18px;font-weight:700;letter-spacing:-.4px}
+/* ITEM CARD FRAME */
+.bf-card{position:relative;max-width:1180px;margin:0 auto;background:#FFFEFB;border:1.5px solid #1A1816;box-shadow:10px 10px 0 #1A1816,0 30px 60px -20px rgba(26,24,22,.25);z-index:1}
+.bf-card::before,.bf-card::after{content:'';position:absolute;width:18px;height:18px;border:1.5px solid #1A1816;background:#FFFEFB;border-radius:50%;z-index:3}
+.bf-card::before{top:-10px;left:-10px;box-shadow:inset 2px 2px 0 rgba(26,24,22,.08)}
+.bf-card::after{top:-10px;right:-10px;box-shadow:inset -2px 2px 0 rgba(26,24,22,.08)}
+/* TOP CHROME: SKU + CATEGORY + IN-STOCK BADGE */
+.bf-chrome{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1.5px dashed #1A1816;background:#FBF5E8;font-family:'Courier New','Courier',monospace;font-size:11px;letter-spacing:1.8px;color:#1A1816;text-transform:uppercase;font-weight:700}
+.bf-sku{display:inline-flex;align-items:center;gap:8px}
+.bf-sku-code{background:#1A1816;color:#FBF5E8;padding:3px 8px;letter-spacing:1.6px;font-weight:800}
+.bf-breadcrumb{color:#5a534a;font-weight:600;letter-spacing:1.2px}
+.bf-breadcrumb b{color:#1A1816}
+.bf-instock{display:inline-flex;align-items:center;gap:7px;color:#1D6B6B;font-weight:900}
+.bf-instock-dot{width:8px;height:8px;border-radius:50%;background:#1D6B6B;animation:bf-blink 1.6s ease-in-out infinite}
+@keyframes bf-blink{0%,100%{opacity:1}50%{opacity:.35}}
+/* MAIN ROW */
+.bf-inner{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:0;align-items:stretch;position:relative}
+.bf-copy{padding:44px 44px 40px;border-right:1.5px dashed #1A1816;min-width:0;position:relative;display:flex;flex-direction:column;justify-content:center}
+.bf-label{display:inline-flex;align-items:center;gap:10px;background:#C72A1F;color:#FFFEFB;font-size:12px;font-weight:900;padding:9px 18px 9px 15px;margin-bottom:20px;text-transform:uppercase;letter-spacing:2px;font-family:Arial,Helvetica,sans-serif;box-shadow:3px 3px 0 #1A1816;position:relative;align-self:flex-start;clip-path:polygon(0 0,100% 0,100% 50%,calc(100% - 10px) 100%,0 100%)}
+.bf-label-dot{width:8px;height:8px;border-radius:50%;background:#FFFEFB;box-shadow:0 0 0 0 rgba(255,254,251,.85);animation:bf-ping 1.4s ease-in-out infinite}
+@keyframes bf-ping{0%{box-shadow:0 0 0 0 rgba(255,254,251,.85)}70%{box-shadow:0 0 0 8px rgba(255,254,251,0)}100%{box-shadow:0 0 0 0 rgba(255,254,251,0)}}
+.bf-cat{display:block;font-family:'Courier New','Courier',monospace;font-size:11px;letter-spacing:2px;color:#9D8B75;margin-bottom:6px;text-transform:uppercase;font-weight:700}
+.bf-title{font-family:var(--display);font-size:clamp(30px,3.6vw,42px);color:var(--dark);line-height:1.1;margin:0 0 18px;font-weight:700;letter-spacing:-.4px}
 .bf-title em{color:var(--coral);font-style:italic}
-.bf-body{font-family:var(--font);font-size:18px;color:#3a3632;line-height:1.7;margin:0 0 22px}
+.bf-body{font-family:var(--font);font-size:16px;color:#3a3632;line-height:1.65;margin:0 0 20px}
 .bf-body strong{color:var(--dark)}
-.bf-takeaway{position:relative;display:inline-block;font-family:var(--accent);font-size:24px;color:var(--coral);line-height:1.3;padding-bottom:10px;margin-bottom:24px}
-.bf-takeaway::after{content:'';position:absolute;left:0;right:0;bottom:0;height:7px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 7' preserveAspectRatio='none'%3E%3Cpath d='M2 5Q50 0 100 4T198 3' stroke='%23E07A5F' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/100% 100%}
-.bf-meta{display:flex;align-items:center;gap:14px;padding-top:8px;border-top:1px dashed var(--border)}
-.bf-counter{display:inline-flex;align-items:center;gap:8px;font-family:var(--font);font-size:14px;color:#5a534a;font-weight:600}
+.bf-takeaway{position:relative;display:inline-block;font-family:var(--accent);font-size:22px;color:var(--coral);line-height:1.3;padding-bottom:8px;margin-bottom:26px;align-self:flex-start}
+.bf-takeaway::after{content:'';position:absolute;left:0;right:0;bottom:0;height:6px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 7' preserveAspectRatio='none'%3E%3Cpath d='M2 5Q50 0 100 4T198 3' stroke='%23E07A5F' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/100% 100%}
+/* ITEMIZED SPEC LIST */
+.bf-specs{list-style:none;margin:0 0 22px;padding:14px 0;border-top:1px solid #E0D8C5;border-bottom:1px solid #E0D8C5}
+.bf-specs li{display:flex;justify-content:space-between;align-items:baseline;font-family:'Courier New','Courier',monospace;font-size:12px;color:#3a3632;padding:5px 0;letter-spacing:.4px}
+.bf-specs li span:first-child{color:#9D8B75;text-transform:uppercase;letter-spacing:1.4px;font-weight:700}
+.bf-specs li span:last-child{color:#1A1816;font-weight:700;text-align:right}
+.bf-specs li span b{color:#C72A1F;font-weight:900}
+.bf-specs li::after{content:'';flex:1;border-bottom:1.5px dotted #C8BEAB;margin:0 10px 4px;align-self:baseline}
+.bf-specs li span:first-child{order:0}.bf-specs li::after{order:1}.bf-specs li span:last-child{order:2}
+.bf-meta{display:flex;align-items:center;gap:14px;padding-top:4px}
+.bf-counter{display:inline-flex;align-items:center;gap:8px;font-family:var(--font);font-size:13px;color:#5a534a;font-weight:600}
 .bf-counter strong{color:#C72A1F;font-weight:900}
-.bf-counter-bar{width:120px;height:6px;background:#F0E5D5;border-radius:3px;overflow:hidden;position:relative}
-.bf-counter-bar::after{content:'';position:absolute;left:0;top:0;bottom:0;width:84%;background:linear-gradient(90deg,#C72A1F,#E07A5F);border-radius:3px}
-.bf-art-wrap{position:relative;aspect-ratio:1.18/1;background:linear-gradient(135deg,#FBF5E8 0%,#F0E2C8 100%);border-radius:18px;padding:30px;box-shadow:0 22px 60px rgba(26,24,22,.14),0 4px 16px rgba(26,24,22,.06);overflow:hidden}
+.bf-counter-bar{width:120px;height:6px;background:#F0E5D5;overflow:hidden;position:relative;border:1px solid #1A1816}
+.bf-counter-bar::after{content:'';position:absolute;left:0;top:0;bottom:0;width:84%;background:repeating-linear-gradient(45deg,#C72A1F 0 6px,#E07A5F 6px 12px)}
+/* PRICE TAG RIBBON */
+.bf-pricetag{position:absolute;top:-14px;right:32px;background:#1A1816;color:#FBF5E8;padding:10px 16px 12px;font-family:'Courier New',monospace;font-weight:800;letter-spacing:1.5px;font-size:11px;text-transform:uppercase;clip-path:polygon(0 0,100% 0,100% 100%,50% calc(100% - 8px),0 100%);z-index:4;line-height:1.3;text-align:center}
+.bf-pricetag b{display:block;font-size:15px;color:#D4A853;letter-spacing:.5px;margin-top:2px}
+.bf-pricetag s{color:#9D8B75;font-weight:600;font-size:10px;letter-spacing:1.2px}
+/* ART SIDE */
+.bf-art-wrap{position:relative;background:linear-gradient(135deg,#FBF5E8 0%,#F0E2C8 100%);padding:28px 28px 18px;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:14px;min-height:100%}
 .bf-art-wrap::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M0 0h60v60H0z' fill='%23FBF5E8' opacity='.4'/%3E%3Ccircle cx='10' cy='10' r='.4' fill='%23B5A77F' opacity='.18'/%3E%3Ccircle cx='30' cy='25' r='.4' fill='%23B5A77F' opacity='.18'/%3E%3Ccircle cx='50' cy='40' r='.4' fill='%23B5A77F' opacity='.18'/%3E%3Ccircle cx='20' cy='50' r='.4' fill='%23B5A77F' opacity='.18'/%3E%3C/svg%3E");opacity:.6;pointer-events:none}
-.bf-art{position:relative;width:100%;height:100%}
+.bf-art{position:relative;width:100%;height:auto;display:block;aspect-ratio:460/400}
+.bf-art-caption{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;font-family:'Courier New','Courier',monospace;font-size:10px;letter-spacing:1.4px;color:#9D8B75;text-transform:uppercase;font-weight:700;padding-top:4px;border-top:1px dotted #C8BEAB}
+.bf-art-caption b{color:#1A1816}
+/* BOTTOM STUB: perforated bar */
+.bf-stub{display:flex;align-items:center;padding:16px 28px;background:#FBF5E8;border-top:1.5px dashed #1A1816;gap:18px;font-family:'Courier New','Courier',monospace;font-size:11px;color:#3a3632;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;position:relative}
+.bf-stub::before,.bf-stub::after{content:'';position:absolute;width:18px;height:18px;border:1.5px solid #1A1816;background:#F4E8D4;border-radius:50%;z-index:3}
+.bf-stub::before{bottom:-10px;left:-10px;box-shadow:inset 2px -2px 0 rgba(26,24,22,.08)}
+.bf-stub::after{bottom:-10px;right:-10px;box-shadow:inset -2px -2px 0 rgba(26,24,22,.08)}
+.bf-stub-item{display:inline-flex;align-items:center;gap:7px}
+.bf-stub-item b{color:#1A1816;font-weight:900}
+.bf-stub-divider{flex:1;border-top:1px dotted #C8BEAB;margin:0 4px}
+.bf-stub-seal{display:inline-flex;align-items:center;gap:6px;color:#C72A1F;font-weight:900;letter-spacing:1.8px}
+.bf-stub-seal::before{content:'';width:7px;height:7px;border-radius:50%;background:#C72A1F}
 @media(max-width:900px){
-.bonus-featured{padding:48px 24px 56px}
-.bf-inner{grid-template-columns:1fr;gap:36px}
-.bf-art-wrap{padding:18px}
+.bonus-featured{padding:40px 16px 52px}
+.bf-card{box-shadow:6px 6px 0 #1A1816,0 20px 40px -15px rgba(26,24,22,.22)}
+.bf-chrome{padding:11px 18px;font-size:9.5px;letter-spacing:1.2px;flex-wrap:wrap;gap:8px}
+.bf-breadcrumb{display:none}
+.bf-inner{grid-template-columns:1fr}
+.bf-copy{padding:32px 22px 28px;border-right:none;border-bottom:1.5px dashed #1A1816}
+.bf-art-wrap{padding:22px;aspect-ratio:1/1}
+.bf-art-caption{left:22px;right:22px;font-size:9px}
+.bf-pricetag{right:16px;top:-12px;padding:8px 12px 10px;font-size:10px}
+.bf-stub{padding:12px 18px;font-size:9.5px;letter-spacing:1px;flex-wrap:wrap;gap:10px}
+.bf-stub-divider{display:none}
 }
 </style>
 <section class="bonus-featured" id="bonus-featured">
-  <div class="bf-tape">EXCLUSIVE FAST-MOVER GIFT</div>
-  <div class="bf-inner">
-    <div class="bf-copy">
-      <span class="bf-label"><span class="bf-label-dot"></span>FIRST 25 BUYERS ONLY</span>
-      <h2 class="bf-title">A <em>personal shop audit</em>, recorded just for you</h2>
-      <p class="bf-body">Bailey personally records a <strong>walkthrough of your Etsy shop</strong> and tells you exactly what she'd change. Your thumbnails, your listings, your positioning. Capped at 25 buyers, no exceptions.</p>
-      <div class="bf-takeaway">So you know exactly what to fix, before you fix it.</div>
-      <div class="bf-meta">
-        <span class="bf-counter"><strong>17</strong> of 25 still available</span>
-        <span class="bf-counter-bar"></span>
-      </div>
+  <div class="bf-card">
+    <!-- TOP CHROME: SKU + IN-STOCK -->
+    <div class="bf-chrome">
+      <span class="bf-sku"><span class="bf-sku-code">SKU · FB-001</span> &nbsp;PERSONAL AUDIT</span>
+      <span class="bf-instock"><span class="bf-instock-dot"></span>17 / 25 IN STOCK</span>
     </div>
+
+    <div class="bf-inner">
+      <div class="bf-copy">
+        <span class="bf-label"><span class="bf-label-dot"></span>FIRST 25 BUYERS ONLY</span>
+        <h2 class="bf-title">A <em>personal shop audit</em>, recorded just for you</h2>
+        <p class="bf-body">Bailey personally records a <strong>walkthrough of your Etsy shop</strong> and tells you exactly what she'd change. Your thumbnails, your listings, your positioning.</p>
+        <div class="bf-takeaway">So you know exactly what to fix, before you fix it.</div>
+        <ul class="bf-specs">
+          <li><span>Format</span><span>Recorded Loom walkthrough</span></li>
+          <li><span>Delivered</span><span>Within 72 hrs</span></li>
+          <li><span>Availability</span><span><b>Capped at 25</b></span></li>
+        </ul>
+        <div class="bf-meta">
+          <span class="bf-counter"><strong>17</strong> of 25 still available</span>
+          <span class="bf-counter-bar"></span>
+        </div>
+      </div>
     <div class="bf-art-wrap">
       <svg class="bf-art" viewBox="0 0 460 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <defs>
@@ -5117,7 +5177,15 @@ function heroBuyScroll(e){
         </g>
       </svg>
     </div>
-  </div>
+    </div><!-- /.bf-inner -->
+
+    <!-- BOTTOM STUB: receipt-style footer -->
+    <div class="bf-stub">
+      <span class="bf-stub-divider"></span>
+      <span class="bf-stub-seal">HAND-CHECKED BY BAILEY</span>
+      <span class="bf-stub-divider"></span>
+    </div>
+  </div><!-- /.bf-card -->
 </section>
 
 <!-- ═══ SECTION 1B: OFFER SUMMARY — Editorial Magazine Stack ═══ -->
@@ -5309,13 +5377,20 @@ function heroBuyScroll(e){
 
 <!-- ═══ WORKSHOP-EXCLUSIVE BONUSES (remove Sunday May 3) ═══ -->
 <style>
-.workshop-bonuses{position:relative;padding:120px 120px 112px;background:linear-gradient(180deg,var(--cream) 0,var(--warm) 100%);overflow:hidden}
-.workshop-bonuses::before{content:'';position:absolute;left:50%;top:80px;bottom:80px;width:1px;transform:translateX(-50%);background:repeating-linear-gradient(to bottom,var(--border) 0,var(--border) 8px,transparent 8px,transparent 20px);opacity:.35;pointer-events:none;z-index:0}
-.wb-inner{max-width:var(--max);margin:0 auto;position:relative;z-index:1}
+.workshop-bonuses{position:relative;padding:120px 40px 112px;background:linear-gradient(180deg,#F0D9C1 0%,#E8C9A9 100%);overflow:hidden}
+.workshop-bonuses::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 10% 10%,rgba(224,122,95,.08) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 90% 90%,rgba(212,168,83,.1) 0%,transparent 60%);pointer-events:none;z-index:0}
+.wb-vault{position:relative;max-width:1260px;margin:0 auto;background:#FBF6EE;border:1.5px solid rgba(26,24,22,.12);border-radius:28px;padding:84px 80px 88px;box-shadow:0 40px 80px -30px rgba(92,60,30,.22),0 8px 24px -10px rgba(92,60,30,.12);z-index:1}
+.wb-vault::before{content:'';position:absolute;inset:10px;border:1px dashed rgba(26,24,22,.15);border-radius:22px;pointer-events:none;z-index:0}
+.workshop-bonuses::before{content:'';position:absolute;left:50%;top:180px;bottom:180px;width:1px;transform:translateX(-50%);background:repeating-linear-gradient(to bottom,var(--border) 0,var(--border) 8px,transparent 8px,transparent 20px);opacity:.55;pointer-events:none;z-index:1}
+.wb-tag{position:absolute;top:-18px;left:50%;transform:translateX(-50%);z-index:3}
+.wb-tag-pill{display:inline-flex;align-items:center;gap:12px;background:#1A1816;color:#FBF5E8;font-family:'Courier New','Courier',monospace;font-size:11px;font-weight:800;letter-spacing:3px;padding:10px 22px;text-transform:uppercase;border-radius:2px;box-shadow:4px 4px 0 #E07A5F}
+.wb-tag-pill::before,.wb-tag-pill::after{content:'';width:14px;height:1px;background:#D4A853}
+.wb-inner{position:relative;z-index:2}
 .wb-title-block{text-align:center;margin:0 auto 72px;max-width:780px}
 .wb-kicker{font-family:var(--accent);font-size:26px;color:var(--coral);letter-spacing:.2px;margin-bottom:8px;display:inline-block;transform:rotate(-2deg)}
 .wb-title{font-family:var(--display);font-size:clamp(32px,4.6vw,48px);color:var(--dark);line-height:1.15;margin:0 0 18px;font-weight:700;letter-spacing:-.4px}
 .wb-title em{color:var(--coral);font-style:italic}
+.wb-title .wb-deadline,.wb-foot .wb-deadline,.wb-deadline{display:inline-block!important;font-family:Arial,Helvetica,sans-serif!important;font-weight:900!important;font-size:.72em!important;letter-spacing:1.4px!important;background:#FFD84A!important;padding:6px 12px 5px!important;color:#1A1816!important;text-transform:uppercase!important;font-style:normal!important;border:2px solid #1A1816!important;box-shadow:4px 4px 0 #1A1816!important;line-height:1!important;vertical-align:middle!important;margin:0 4px!important;white-space:nowrap!important;transform:rotate(-1.2deg);position:relative;top:-3px}
 .wb-sub{font-family:var(--font);font-size:18px;color:#555;line-height:1.75;margin:0}
 .wb-sub strong{color:var(--dark)}
 .wb-card{max-width:var(--max);margin:0 auto 64px;display:grid;grid-template-columns:1fr 360px;gap:56px;align-items:center;position:relative}
@@ -5336,13 +5411,16 @@ function heroBuyScroll(e){
 .wb-body{font-family:var(--font);font-size:17px;color:#555;line-height:1.75;margin:0 0 20px}
 .wb-takeaway{position:relative;display:inline-block;font-family:var(--accent);font-size:22px;color:var(--coral);line-height:1.3;padding-bottom:10px}
 .wb-takeaway::after{content:'';position:absolute;left:0;right:0;bottom:0;height:7px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 7' preserveAspectRatio='none'%3E%3Cpath d='M2 5Q50 0 100 4T198 3' stroke='%23E07A5F' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/100% 100%}
-.wb-foot{margin:48px auto 0;max-width:720px;padding:22px 28px;border-radius:16px;border:1.5px dashed rgba(224,122,95,.4);background:rgba(224,122,95,.04);text-align:center;font-family:var(--font);font-size:16px;color:var(--dark);letter-spacing:.2px}
+.wb-foot{margin:48px auto 0;max-width:720px;padding:22px 28px;border-radius:16px;border:1.5px dashed rgba(224,122,95,.4);background:rgba(224,122,95,.06);text-align:center;font-family:var(--font);font-size:16px;color:var(--dark);letter-spacing:.2px}
 .wb-foot strong{color:var(--coral);font-weight:800}
 @media (max-width:1200px){
-  .workshop-bonuses{padding:104px 72px 96px}
+  .workshop-bonuses{padding:100px 24px 96px}
+  .wb-vault{padding:72px 48px 76px}
 }
 @media (max-width:900px){
-  .workshop-bonuses{padding:72px 40px 64px}
+  .workshop-bonuses{padding:80px 16px 72px}
+  .wb-vault{padding:56px 24px 56px;border-radius:20px}
+  .wb-vault::before{inset:6px;border-radius:16px}
   .workshop-bonuses::before{display:none}
   .wb-card,.wb-card:nth-child(even){grid-template-columns:1fr;direction:ltr;gap:28px;margin-bottom:48px}
   .wb-card:nth-child(even)>*{direction:ltr}
@@ -5353,11 +5431,13 @@ function heroBuyScroll(e){
 </style>
 
 <section class="workshop-bonuses" aria-labelledby="wb-title">
+  <div class="wb-vault">
+  <div class="wb-tag"><span class="wb-tag-pill">★ &nbsp;BONUS VAULT &nbsp;★</span></div>
   <div class="wb-inner">
 
     <div class="wb-title-block">
       <div class="wb-kicker">for this workshop only</div>
-      <h2 class="wb-title" id="wb-title">Two bonuses that <em>disappear</em> at midnight Saturday May 2</h2>
+      <h2 class="wb-title" id="wb-title">Two bonuses that <em>disappear</em> at <span class="wb-deadline">midnight Saturday May&nbsp;2</span></h2>
       <p class="wb-sub">Every monthly workshop comes with its own unique bonuses, tied to that month's build. <strong>These three belong to this workshop.</strong></p>
     </div>
 
@@ -5744,9 +5824,10 @@ function heroBuyScroll(e){
       </div>
     </article>
 
-    <div class="wb-foot">Both disappear at <strong>midnight Saturday May 2</strong>. The code and the bonuses go together.</div>
+    <div class="wb-foot">Both disappear at <span class="wb-deadline">midnight Saturday May&nbsp;2</span>. The code and the bonuses go together.</div>
 
-  </div>
+  </div><!-- /.wb-inner -->
+  </div><!-- /.wb-vault -->
 </section>
 
 <!-- ═══ DO-THE-WORK GUARANTEE (restore old guarantee-alt on May 3) ═══ -->
@@ -6355,6 +6436,22 @@ function heroBuyScroll(e){
       </div>
     </div>
   </div>
+  <script>
+  (function(){
+    var cards = document.querySelectorAll('.netflix-shelf .nf-card');
+    cards.forEach(function(card){
+      card.setAttribute('role','button');
+      card.setAttribute('tabindex','0');
+      card.addEventListener('click', function(){
+        var t = document.getElementById('checkout');
+        if(t) t.scrollIntoView({behavior:'smooth', block:'start'});
+      });
+      card.addEventListener('keydown', function(e){
+        if(e.key==='Enter' || e.key===' '){ e.preventDefault(); var t=document.getElementById('checkout'); if(t) t.scrollIntoView({behavior:'smooth', block:'start'}); }
+      });
+    });
+  })();
+  </script>
 </section>
 
 <section class="proof-section">
